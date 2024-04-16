@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int x, i, t;
+    scanf("%d", &t);
+   
+
+    for (int k = 0; k < t; k++) {
+        scanf("%d", &x);
+        unsigned long long numero[x];
+        numero[0] = 1;
+        numero[1] = 1;
+
+        if (x == 0) {
+            printf("Fib(0) = 0\n");
+        }
+        for (i = 2; i < x; i++) {
+            numero[i] = numero[i-1] + numero[i-2];
+        }
+
+        for (int l = 0; l < x; l++) {
+            if ((l+1) == x) {
+                printf("Fib(%d) = %lld\n", x, numero[l]);
+            }
+        }
+        
+    }
+    
+
+    return 0;
+}
+
+// 1 1 2 3 5 8 13 21 34 55...
