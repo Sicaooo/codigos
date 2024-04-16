@@ -4,7 +4,6 @@ int main() {
     int x, i, t;
     scanf("%d", &t);
    
-
     for (int k = 0; k < t; k++) {
         scanf("%d", &x);
         unsigned long long numero[x];
@@ -25,7 +24,6 @@ int main() {
         }
         
     }
-    
 
     return 0;
 }
