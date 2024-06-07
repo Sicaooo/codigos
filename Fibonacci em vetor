@@ -17,15 +17,8 @@ int main() {
             numero[i] = numero[i-1] + numero[i-2];
         }
 
-        for (int l = 0; l < x; l++) {
-            if ((l+1) == x) {
-                printf("Fib(%d) = %lld\n", x, numero[l]);
-            }
-        }
-        
+        printf("Fib(%d) = %lld\n", x, numero[x-1]);
     }
 
     return 0;
 }
-
-// 1 1 2 3 5 8 13 21 34 55...
