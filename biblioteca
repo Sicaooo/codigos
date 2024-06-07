@@ -1,4 +1,4 @@
-void sort(int tamanho, int vetor[tamanho]) {
+void sort(int ordem, int tamanho, int vetor[tamanho]) {
     int i, j, l, num, maior, pos = 0;
     for (i = 0; i < tamanho; i++) {
         if (i == 0) {
@@ -20,6 +20,15 @@ void sort(int tamanho, int vetor[tamanho]) {
                 }
                 vetor[j] = num;
             }
+        }
+    }
+    if (ordem < 0) {
+        int vetor2[tamanho];
+        for (int i = 0; i < tamanho; i++) {
+            vetor2[i] = vetor[tamanho-i-1];
+        }
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = vetor2[i];
         }
     }
 }
