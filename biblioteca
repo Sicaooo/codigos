@@ -1,0 +1,26 @@
+void sort(int tamanho, int vetor[tamanho]) {
+    int i, j, l, num, maior, pos = 0;
+    for (i = 0; i < tamanho; i++) {
+        if (i == 0) {
+            maior = vetor[i];
+        }
+        else if (vetor[i] > maior) {
+            maior = vetor[i];
+            pos = i;
+        }
+    }
+    vetor[pos] = vetor[0];
+    vetor[0] = maior;
+    for (i = 0; i < tamanho; i++) {
+        for (j = 0; j < tamanho; j++) {
+            if (vetor[i] < vetor[j]) {
+                num = vetor[i];
+                for (l = i; l > j; l--) {
+                    vetor[l] = vetor[l-1];
+                }
+                vetor[j] = num;
+            }
+        }
+    }
+}
+// sort em um vetor
