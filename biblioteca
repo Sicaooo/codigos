@@ -47,17 +47,51 @@ void buble(int size, int arr[size], int ordem) {
             }
         }
     }
-    else {
-       for (int i = 0; i < size - 1; i++) {
-            for (int j = 0; j < size - 1; j++) {
-                if (arr[j] < arr[j + 1]) {
-                    aux = arr[j + 1];
-                    arr[j + 1] = arr[j];
-                    arr[j] = aux;
-                }
-            }
-        } 
+// buble sort
+
+void sort(int size, int arr[]) {
+    int aux, vetor_aux[size];
+    int maior = arr[0];
+    for (int i = 0; i < size; i++) {
+        vetor_aux[i] = arr[i];
+        if (vetor_aux[i] > maior) maior = vetor_aux[i];
     }
     
+    int menor, pos;
+    for (int i = 0; i < size - 1; i++) {
+        menor = maior + 1;
+        for (int j = 0; j < size; j++) {
+            if (vetor_aux[j] < menor) {
+                menor = vetor_aux[j];
+                pos = j;
+            }
+        }
+        aux = arr[pos];
+        arr[pos] = arr[i];
+        arr[i] = aux;
+
+        aux = vetor_aux[pos];
+        vetor_aux[pos] = vetor_aux[i];
+        vetor_aux[i] = aux;
+        vetor_aux[i] = maior + 1;        
+    }
 }
-// buble sort
+//sort q eu tirei da minha cabeça
+
+int inicio = 0, fim = qnt - 1, meio;
+do {
+    meio = (inicio + fim) / 2;
+    cont++;
+    if (arr[meio] == num) {
+        pos = meio;
+        contem++;
+        break;
+    }
+    else if (arr[meio] < num) {
+        inicio = meio + 1;
+    }
+    else {
+        fim = meio - 1;
+    }
+} while (inicio <= fim);
+//busca binária
