@@ -95,3 +95,23 @@ do {
     }
 } while (inicio <= fim);
 //busca binária
+
+void selection_sort(int size, int arr[size]) {
+    int aux;
+    int menor;
+    int pos = 0;
+
+    for (int i = 0; i < size - 1; i++) {
+        menor = arr[i];
+        for (int j = i + 1; j < size; j++) {
+            if (arr[j] < menor) {
+                menor = arr[j];
+                pos = j;
+            }
+        }
+        aux = arr[pos];
+        arr[pos] = arr[i];
+        arr[i] = aux;
+    }
+}
+//selection sort
