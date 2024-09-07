@@ -3,15 +3,15 @@
 
 void vigenere(const char *p, const char *c, const char o) { 
     char palavra_final[100];
-    int pos = 0;
+    unsigned int pos = 0;
     if (o == 'c') {
-        for (int i = 0; i < strlen(p); i++) {
+        for (unsigned int i = 0; i < strlen(p); i++) {
             palavra_final[i] = p[i] + c[pos] - 'a' <= 'z' ? p[i] + c[pos] - 'a' : p[i] + c[pos] - 'z' - 1;
             pos == (strlen(c) - 1) ? pos = 0 : pos++;
         }
     }
     else {
-        for (int i = 0; i < strlen(p); i++) {
+        for (unsigned int i = 0; i < strlen(p); i++) {
             palavra_final[i] = p[i] - c[pos] + 'a' >= 'a' ? p[i] - c[pos] + 'a' : p[i] - c[pos] + 'z' + 1;
             pos == (strlen(c) - 1) ? pos = 0 : pos++;
         }
